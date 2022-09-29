@@ -12,23 +12,18 @@ public class EmployeeWage {
 		System.out.println("Welcome to Employee Wage Computation Program");
 		Random random = new Random();
 		int empCheck = random.nextInt(3);
-		if(empCheck == 1)
+		switch(empCheck)
 		{
-			System.out.println("Employee is Present.");
-			salary = empWagePerHour * fullDayHour ;
+		case 0: System.out.println("Employee is Absent.");
+				break;	
+		case 1: System.out.println("Employee is Present.");
+				salary = empWagePerHour * fullDayHour ;
+				break;
+		case 2: System.out.println("Present for Half Day");
+				salary = empWagePerHour * halfDayHour ;
 		}
-		else if(empCheck == 2)
-		{
-			System.out.println("Present for Half Day");
-			salary = empWagePerHour * halfDayHour ;
-		}
-		else
-		{
-			System.out.println("Employee is Absent.");
-		}
-		System.out.println("random: "+empCheck);
+		//System.out.println("random: "+empCheck);
 		System.out.println("Salary is: "+salary);
-		
 	}
 
 }
