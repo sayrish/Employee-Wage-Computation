@@ -11,10 +11,13 @@ public class EmployeeWage {
 		int salary = 0;
 		int totalSalary = 0;
 		int totalWorkingDays = 20;
+		int days =0;
+		int totalWorkingHours = 0;
 		System.out.println("Welcome to Employee Wage Computation Program");
 		Random random = new Random();
-		for(int i=1; i<totalWorkingDays; i++)
+		while(days != totalWorkingDays && totalWorkingHours != 100)
 		{
+			
 			int empCheck = random.nextInt(3);
 			switch(empCheck)
 			{
@@ -22,13 +25,17 @@ public class EmployeeWage {
 						break;	
 				case 1: System.out.println("Employee is Present.");
 						salary = empWagePerHour * fullDayHour ;
+						totalWorkingHours = totalWorkingHours + fullDayHour;
 						break;
 				case 2: System.out.println("Present for Half Day");
 						salary = empWagePerHour * halfDayHour ;
+						totalWorkingHours = totalWorkingHours + halfDayHour;
 			}
-				//System.out.println("random: "+empCheck);
-				System.out.println("Salary is: "+salary);
+				System.out.print("random: "+empCheck+"\t");
+				System.out.print("Working Hours: "+totalWorkingHours+"\t");
+				System.out.print("\tSalary is: "+salary+"\t");
 				totalSalary = totalSalary + salary;
+				days++;
 		}
 		System.out.println("Total Salary: "+totalSalary);
 	}
